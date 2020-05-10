@@ -12,18 +12,24 @@ import java.sql.SQLException;
 import java.sql.Statement;
        
 public class Connect {  
-
+    /**
+     * Connect to a sample database 
+     * @return
+     * @throws SQLException 
+     */
     static Connection connect() throws SQLException {
          String url = "jdbc:sqlite:database.db"; 
      Connection conn = DriverManager.getConnection(url);  
      
      return conn;
     }
-    /** 
-    * Connect to a sample database 
-    */  
   
-    public static void insert(String name, double amount) {  
+   /**
+    * Adds player name and amount of players
+    * @param name player name
+    * @param amount amount of players
+    */
+   public static void insert(String name, double amount) {  
    String sql = "INSERT INTO players(name, amount) VALUES(?,?)"; 
    String url = "jdbc:sqlite:database.db"; 
         try{  
@@ -37,6 +43,11 @@ public class Connect {
             System.out.println(e.getMessage());  
         }  
     }
+   
+   
+   /**
+    * Create a new database table
+    */
     public static void createNewTable() {  
         // SQLite connection string  
            String url = "jdbc:sqlite:database.db";  
@@ -60,7 +71,12 @@ public class Connect {
             System.out.println(e.getMessage());  
         }  
     }  
-//update user details
+    
+    /**
+     * update player name and amount of players
+     * @param id the id of player
+     * @param amount the amount of the player
+     */
   public static void update(int id, double amount) { 
     String sql = "UPDATE players SET amount = ?  "
                 + "WHERE id = ?";
@@ -80,6 +96,11 @@ public class Connect {
             
         }
     }
+  
+  /**
+   * get data of the id
+   * @param id the id of player
+   */
    public void getMydata(int id) { 
     String sql = "SELECT * FROM players WHERE id = ?";
                 String url = "jdbc:sqlite:database.db"; 

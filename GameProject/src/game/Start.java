@@ -40,6 +40,12 @@ public Start(){
          
     return item;
   }
+  
+  /**
+   * 
+   * @param id
+   * @return 
+   */
     public static String User(int id){
       String item = "";
               String sql = "SELECT * FROM players WHERE id = "+ id;  
