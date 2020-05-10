@@ -18,10 +18,10 @@ public class Connect {
      * @throws SQLException 
      */
     static Connection connect() throws SQLException {
-         String url = "jdbc:sqlite:database.db"; 
-     Connection conn = DriverManager.getConnection(url);  
-     
-     return conn;
+        String url = "jdbc:sqlite:database.db"; 
+        Connection conn = DriverManager.getConnection(url);
+         
+        return conn;
     }
   
    /**
@@ -30,8 +30,9 @@ public class Connect {
     * @param amount amount of players
     */
    public static void insert(String name, double amount) {  
-   String sql = "INSERT INTO players(name, amount) VALUES(?,?)"; 
-   String url = "jdbc:sqlite:database.db"; 
+        String sql = "INSERT INTO players(name, amount) VALUES(?,?)"; 
+        String url = "jdbc:sqlite:database.db"; 
+        
         try{  
             Connection conn = DriverManager.getConnection(url); 
             PreparedStatement pstmt = conn.prepareStatement(sql);  
@@ -50,7 +51,7 @@ public class Connect {
     */
     public static void createNewTable() {  
         // SQLite connection string  
-           String url = "jdbc:sqlite:database.db";  
+        String url = "jdbc:sqlite:database.db";  
           
         // SQL statement for creating a new table  
         String sql1 = "DROP TABLE IF EXISTS players";  
@@ -77,11 +78,11 @@ public class Connect {
      * @param id the id of player
      * @param amount the amount of the player
      */
-  public static void update(int id, double amount) { 
-    String sql = "UPDATE players SET amount = ?  "
+    public static void update(int id, double amount) { 
+        String sql = "UPDATE players SET amount = ?  "
                 + "WHERE id = ?";
                 String url = "jdbc:sqlite:database.db"; 
-    try{  
+        try{  
             Connection conn = DriverManager.getConnection(url); 
             PreparedStatement pstmt = conn.prepareStatement(sql);
             

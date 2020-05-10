@@ -15,18 +15,16 @@ import java.sql.Statement;
 public class Level {
     
     static int playerLevel(int player) {
-              String cars = null;
-      int level = 0;
-              String sql = "SELECT * FROM level WHERE player = "+ player;  
+        String cars = null;
+        int level = 0;
+        String sql = "SELECT * FROM level WHERE player = "+ player;  
           
         try {  
             Connection conn = Connect.connect();  
             Statement stmt  = conn.createStatement();  
             ResultSet rs    = stmt.executeQuery(sql); 
 //            System.out.println(rs.getString("name"));
-              
-            // loop through the result set 
-            
+//            loop through the result set 
             while (rs.next()) {  
                  level += rs.getInt("level");
             }  
@@ -38,10 +36,11 @@ public class Level {
          
         return level;
     }
-     static void updateLevel(int level, int player) {
-            String sql = "UPDATE level SET level = ?  "
+    
+    static void updateLevel(int level, int player) {
+        String sql = "UPDATE level SET level = ?  "
                 + "WHERE player = ?";
-    try{  
+        try {  
             Connection conn = Connect.connect(); 
             PreparedStatement pstmt = conn.prepareStatement(sql);
             
@@ -52,13 +51,13 @@ public class Level {
             System.out.println("Level updated succefully");
              pstmt.close();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            
-            
+            System.out.println(e.getMessage());   
         }
     }
-         public static void insert(int level, int player) {  
-   String sql = "INSERT INTO level(level, player) VALUES(?,?)"; 
+    
+    public static void insert(int level, int player) {  
+        String sql = "INSERT INTO level(level, player) VALUES(?,?)"; 
+        
         try{  
             Connection conn = Connect.connect(); 
             PreparedStatement pstmt = conn.prepareStatement(sql);  
@@ -70,12 +69,16 @@ public class Level {
             System.out.println(e.getMessage());  
         }  
     }
-      public static boolean check(int id){
-      boolean status = false;
-       int count = 0;
-       //check if it is owned
-       //returns true if it is owned
-       String sql = "SELECT COUNT (*) FROM level WHERE player=" + id;  
+         
+    /**
+      * Return status of id
+      * @param id the id of the player
+      * @return true if it is owned, otherwise false
+      */
+    public static boolean check(int id){
+        boolean status = false;
+        int count = 0;
+        String sql = "SELECT COUNT (*) FROM level WHERE player=" + id;  
           
         try {  
             Connection conn = Connect.connect();  
@@ -93,20 +96,18 @@ public class Level {
             status = true;
         }
       
-      return status;
-  }
-//      public static void main(String args[]){ 
-//          init();
-////    System.out.println(check(1));
-//      }  
+        return status;
+    }
 
+    /**
+      * init the database
+      */
     static void init() {
-            // SQLite connection string  
-           String url = "jdbc:sqlite:database.db";  
-          
+        // SQLite connection string
+        String url = "jdbc:sqlite:database.db";  
         // SQL statement for creating a new table  
         String sql1 = "DROP TABLE IF EXISTS level";  
-
+        
         String sql = "CREATE TABLE IF NOT EXISTS level (\n"  
                 + " id integer PRIMARY KEY AUTOINCREMENT,\n"  
                 + " level INTEGER DEFAULT 0,\n"  
