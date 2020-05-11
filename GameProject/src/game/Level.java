@@ -14,6 +14,11 @@ import java.sql.Statement;
 
 public class Level {
     
+    /**
+     * 
+     * @param player
+     * @return 
+     */
     static int playerLevel(int player) {
         String cars = null;
         int level = 0;
@@ -55,6 +60,11 @@ public class Level {
         }
     }
     
+    /**
+     * Add 
+     * @param level the level of player
+     * @param player 
+     */
     public static void insert(int level, int player) {  
         String sql = "INSERT INTO level(level, player) VALUES(?,?)"; 
         
@@ -71,7 +81,7 @@ public class Level {
     }
          
     /**
-      * Return status of id
+      * Checks whether it is owned
       * @param id the id of the player
       * @return true if it is owned, otherwise false
       */
