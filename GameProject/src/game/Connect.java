@@ -47,7 +47,7 @@ public class Connect {
    
    
    /**
-    * Create a new database table
+    * Creates a new database table
     */
     public static void createNewTable() {  
         // SQLite connection string  
@@ -74,7 +74,7 @@ public class Connect {
     }  
     
     /**
-     * update player name and amount of players
+     * Updates player name and amount of players
      * @param id the id of player
      * @param amount the amount of the player
      */
@@ -99,7 +99,7 @@ public class Connect {
     }
   
   /**
-   * get data of the id
+   * Gets data by player ID
    * @param id the id of player
    */
    public void getMydata(int id) { 

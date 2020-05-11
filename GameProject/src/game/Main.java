@@ -8,11 +8,11 @@ package game;
 public class Main {
 
     /**
+     * Runs the Game
+     * Creates and display the dialog
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
-        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(() -> {
             Game dialog = new Game(new javax.swing.JFrame(), true);
             dialog.addWindowListener(new java.awt.event.WindowAdapter() {

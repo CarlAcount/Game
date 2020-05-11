@@ -15,9 +15,9 @@ import java.sql.Statement;
 public class Level {
     
     /**
-     * 
+     * Sets the level of player
      * @param player
-     * @return 
+     * @return the level of player
      */
     static int playerLevel(int player) {
         String cars = null;
@@ -42,6 +42,11 @@ public class Level {
         return level;
     }
     
+    /**
+     * Updates the level of player
+     * @param level the level of player
+     * @param player 
+     */
     static void updateLevel(int level, int player) {
         String sql = "UPDATE level SET level = ?  "
                 + "WHERE player = ?";
@@ -59,9 +64,9 @@ public class Level {
             System.out.println(e.getMessage());   
         }
     }
-    
+
     /**
-     * Add 
+     * Adds player's level with player
      * @param level the level of player
      * @param player 
      */
