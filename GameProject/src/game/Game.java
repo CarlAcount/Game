@@ -1739,6 +1739,7 @@ public class Game extends javax.swing.JDialog {
         
     }//GEN-LAST:event_rentActionPerformed
 
+    
     private void buyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyActionPerformed
         // TODO add your handling code here:
          auction.setEnabled(false);

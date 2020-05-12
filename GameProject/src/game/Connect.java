@@ -75,7 +75,7 @@ public class Connect {
     
     /**
      * Updates player name and amount of players
-     * @param id the id of player
+     * @param id the the player id
      * @param amount the amount of the player
      */
     public static void update(int id, double amount) { 
@@ -100,7 +100,7 @@ public class Connect {
   
   /**
    * Gets data by player ID
-   * @param id the id of player
+   * @param id the player id
    */
    public void getMydata(int id) { 
     String sql = "SELECT * FROM players WHERE id = ?";

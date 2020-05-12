@@ -7,10 +7,10 @@
 public class Other {
 
     /**
-     * 
-     * @param value
-     * @param player
-     * @return 
+     * Opportunity cards in the Property Tycoon
+     * @param value the value of card
+     * @param player the player
+     * @return Messages of Opportunity cards
      */
     static String opportunity(int value, int player) {
         String message = "";
@@ -121,6 +121,12 @@ public class Other {
         return message;
     }
 
+    /**
+     * Lucky cards in the Property Tycoon
+     * @param value the value of card
+     * @param player the player
+     * @return Messages of Lucky cards
+     */
     static String potLuck(int value, int player) {
         String message = "";
         int players = Start.Count();

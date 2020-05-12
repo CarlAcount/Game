@@ -45,7 +45,7 @@ public class Level {
     /**
      * Updates the level of player
      * @param level the level of player
-     * @param player 
+     * @param player the player
      */
     static void updateLevel(int level, int player) {
         String sql = "UPDATE level SET level = ?  "
@@ -68,7 +68,7 @@ public class Level {
     /**
      * Adds player's level with player
      * @param level the level of player
-     * @param player 
+     * @param player the player
      */
     public static void insert(int level, int player) {  
         String sql = "INSERT INTO level(level, player) VALUES(?,?)"; 

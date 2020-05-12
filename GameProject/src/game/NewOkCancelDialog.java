@@ -45,6 +45,7 @@ public class NewOkCancelDialog extends javax.swing.JDialog {
     }
 
     /**
+     * Returns the return status of this dialog - one of RET_OK or RET_CANCEL
      * @return the return status of this dialog - one of RET_OK or RET_CANCEL
      */
     public int getReturnStatus() {
